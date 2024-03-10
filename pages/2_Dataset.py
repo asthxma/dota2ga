@@ -3,11 +3,6 @@ import pandas as pd
 from PIL import Image
 from streamlit_extras.switch_page_button import switch_page 
 
-<<<<<<< Updated upstream
-df = pd.read_csv('dota2ga/dataset/dota2_dataset.csv')
-print(df)
-
-=======
 st.set_page_config(
     page_title="Dataset Dota 2",
     page_icon="👋",
