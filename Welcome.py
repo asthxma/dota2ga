@@ -3,7 +3,7 @@ from PIL import Image
 from streamlit_extras.switch_page_button import switch_page 
 from streamlit.components.v1 import html
 
-im = Image.open("iconsdota.png")
+im = Image.open("dota2ga\iconsdota.png")
 st.set_page_config(
     page_title="Dota 2",
     page_icon=im,
@@ -11,11 +11,18 @@ st.set_page_config(
 )
 
 
-st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
+# st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
 
-st.write("# Genetic Algorithm for DOTA 2 Team Composition :face_with_spiral_eyes:")
+st.write("# Genetic Algorithm for DOTA 2: Team Composition :face_with_spiral_eyes:")
     
-st.subheader('What is Dota 2?', divider='rainbow')
+st.header('What is Dota 2?', divider='rainbow')
+
+# Load the GIF file
+gif_file_path = 'dota2ga\img\dota.gif'
+
+# Display the GIF file with adjusted width and centered position
+st.image(gif_file_path, width=400)
+
 st.write("Dota 2 is a multiplayer online battle arena game , \
         and is the sequel to the Defense of the Ancients mod on Warcraft \
         3: Reign of Chaos and Warcraft 3: The Frozen Throne . DotA 2 was developed by Valve Corporation, \
@@ -26,9 +33,9 @@ st.write("Dota 2 is a multiplayer online battle arena game , \
     #image = Image.open('strixrog.png')
     #st.image(image, caption='ASUS ROG STRIX')
 
-st.subheader("Gameplay Introduction", divider='violet')
+st.header("Gameplay Introduction", divider='rainbow')
 
-video_file = open('simulasi.mp4', 'rb')
+video_file = open('dota2ga\img\simulasi.mp4', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 with st.container():
@@ -45,7 +52,7 @@ with st.container():
             In Dota 2, heroes not only have distinct abilities but also feature customizable costumes, adding to the game's immersive experience.")
     
 with st.container():
-    st.subheader("Hero Of Dota 2", divider='blue')
+    st.header("Hero Of Dota 2", divider='rainbow')
     st.write("Here are some examples of heroes in Dota 2: ")
     multi = ''' 
         1. Anti-Mage 
@@ -77,15 +84,15 @@ def open_page(url):
     """ % (url)
     html(open_script)
 
-if st.button('VIEW ALL HEROES'):
-    open_page('https://www.dota2.com/heroes')
+st.link_button('VIEW ALL HEROES', "https://www.dota2.com/heroes")
+    
 
 with st.container():
-    image = Image.open('Hero.png')
+    image = Image.open('dota2ga\img\Hero.png')
     st.image(image, caption='HEROES OF DOTA 2')
 
 with st.container():
-    st.subheader("Team Player", divider='red')
+    st.header("Team Player", divider='rainbow')
     st.write("Dota 2 is played by 2 teams consisting of 5 players, \
         each team has a base in a corner of the map, each base has a building called (Ancient), \
         where the team must try to destroy the opposing team's (Ancient)\
@@ -93,7 +100,7 @@ with st.container():
         character who focuses on leveling up, collecting gold, buying items and fighting the opposing team to win.")
 
 with st.container():
-    st.subheader("Creator", divider='grey')
+    st.header("Creator", divider='rainbow')
     col1, col2, col3, col4 = st.columns(4, gap="small")
     with col1:
         st.write(":anguished: DMH")
