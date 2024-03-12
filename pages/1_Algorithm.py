@@ -56,18 +56,18 @@ with st.container():
     st.subheader("Balanced Team", divider='violet')
     st.write("Untuk Balanced Team, dirumuskan penghitungan fitness function dari masing-masing hero sebagai berikut.")  
     st.latex(r'''
-    a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
-    \sum_{k=0}^{n-1} ar^k =
-    a \left(\frac{1-r^{n}}{1-r}\right)
-    ''')
+                a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+                \sum_{k=0}^{n-1} ar^k =
+                a \left(\frac{1-r^{n}}{1-r}\right)
+                ''')
     st.write("")
     
     st.subheader("Teamfight Team", divider='violet')
     st.write("Untuk Teamfight, dirumuskan penghitungan fitness function dari masing-masing hero sebagai berikut.")  
     st.latex(r'''
-    a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
-    \sum_{k=0}^{n-1} ar^k =
-    a \left(\frac{1-r^{n}}{1-r}\right)
-    ''')
+                a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+                \sum_{k=0}^{n-1} ar^k =
+                a \left(\frac{1-r^{n}}{1-r}\right)
+                ''')
     st.write("") 
     

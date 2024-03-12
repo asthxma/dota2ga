@@ -17,22 +17,17 @@ from streamlit_extras.switch_page_button import switch_page
 from streamlit.components.v1 import html
 
 #Layout
-im = Image.open("iconsdota.png")
-st.set_page_config(
-    page_title="Dota 2",
-    page_icon=im,
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+im = Image.open("dota2ga\iconsdota.png")
 
-#Data Pull and Functions
-st.markdown("""
-<style>
-.big-font {
-    font-size:80px !important;
-}
-</style>
-""", unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <style>
+        #MainMenu { display: none; }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 @st.cache_data
 def load_lottiefile(filepath: str):
@@ -50,7 +45,7 @@ def pull_clean():
 with st.sidebar:
     selected = option_menu('Dota 2', ['Home', "Algorithm", 'Dataset','Team Composition'], 
         icons=['house','play-btn','folder','info-circle'],menu_icon='intersect', default_index=0)
-    lottie = load_lottiefile("similo3.json")
+    lottie = load_lottiefile("dota2ga\similo3.json")
     st_lottie(lottie,key='loc')
 
 #Intro Page
@@ -67,7 +62,7 @@ if selected=="Home":
     
     st.subheader("Gameplay Introduction", divider='violet')
 
-video_file = open('simulasi.mp4', 'rb')
+video_file = open('dota2ga\img\simulasi.mp4', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 with st.container():
@@ -121,7 +116,7 @@ with st.container():
         open_page('https://www.dota2.com/heroes')
 
     with st.container():
-        image = Image.open('Hero.png')
+        image = Image.open('dota2ga\img\Hero.png')
         st.image(image, caption='HEROES OF DOTA 2')
 
     with st.container():

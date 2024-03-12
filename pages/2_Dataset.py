@@ -18,8 +18,16 @@ with st.container():
     st.write("This dataset presents information about 124 heroes in Dota 2 that can be played by teams. The data provided includes win rate, pick rate, primary role, and various other important information that can help in game strategy. With this dataset, teams can conduct in-depth analysis to choose the optimal team composition and plan effective strategies to achieve victory.")
     
 df = pd.read_csv(r'dota2ga\dataset\dota2_heroes.csv')
+
+# Membersihkan data dari nilai-nilai yang hilang
 cleaned_df = df.dropna()
+# Menampilkan DataFrame setelah membersihkan
 st.write(cleaned_df)
+# Menghapus kolom 'id'
+df = df.iloc[1:, :]
+# Menampilkan DataFrame tanpa kolom 'id' menggunakan Streamlit
+st.dataframe(df)
+
 
 st.write("""<span style="color:red">**Note:**</span> Match data is taken for matches that took place between February 1-29, 2024.""", unsafe_allow_html=True)
 

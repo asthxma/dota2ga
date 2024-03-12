@@ -11,6 +11,10 @@ st.set_page_config(
 )
 
 
+
+# Konten aplikasi Streamlit
+st.write("Konten utama tanpa sidebar.")
+
 # st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
 
 st.write("# Genetic Algorithm for DOTA 2: Team Composition :face_with_spiral_eyes:")
@@ -35,9 +39,21 @@ st.write("Dota 2 is a multiplayer online battle arena game , \
 
 st.header("Gameplay Introduction", divider='rainbow')
 
-video_file = open('dota2ga\img\simulasi.mp4', 'rb')
-video_bytes = video_file.read()
-st.video(video_bytes)
+# video_file = open('dota2ga\img\simulasi.mp4', 'rb')
+# video_bytes = video_file.read()
+# st.video(video_bytes)
+
+def vid():
+    # st.title("Video Player")
+
+    # Tambahkan video ke dalam aplikasi
+    video_file = open('dota2ga\img\simulasi.mp4', 'rb')
+    video_bytes = video_file.read()
+    st.video(video_bytes)
+
+if __name__ == "__main__":
+    vid()
+
 with st.container():
     st.write("Dota 2 is a highly strategic multiplayer online battle arena (MOBA) game where two teams, \
             Radiant and Dire, each consisting of five players, clash to destroy the opposing team's Ancient - their main base. \
