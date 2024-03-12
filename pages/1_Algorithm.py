@@ -71,3 +71,12 @@ with st.container():
                 ''')
     st.write("") 
     
+st.header("Genetic Algorithm Implementation", divider='rainbow')
+with st.container():
+    st.write("""
+             1. The initial population is done by forming as many teams as the specified population value. Each team consists of random heroes.
+            2. Calculate the fitness of the formed team (Balance or Teamfight).
+            3. Tournament selection is used as the selection method for selecting parents.
+            4. The 2 parents are crossovered with 1 cut point. The cut point is chosen randomly
+            """)
+    
