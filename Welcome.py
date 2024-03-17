@@ -3,7 +3,7 @@ from PIL import Image
 from streamlit_extras.switch_page_button import switch_page 
 from streamlit.components.v1 import html
 
-im = Image.open("dota2ga\iconsdota.png")
+im = Image.open("iconsdota.png")
 st.set_page_config(
     page_title="Dota 2",
     page_icon=im,
@@ -11,49 +11,24 @@ st.set_page_config(
 )
 
 
+#st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
 
-# Konten aplikasi Streamlit
-st.write("Konten utama tanpa sidebar.")
-
-# st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
-
-st.write("# Genetic Algorithm for DOTA 2: Team Composition :face_with_spiral_eyes:")
+st.write("# Genetic Algorithm for DOTA 2 Team Composition :face_with_spiral_eyes:")
     
-st.header('What is Dota 2?', divider='rainbow')
+st.subheader('What is Dota 2?', divider='rainbow')
+st.write("Dota 2 is a multiplayer online battle arena (MOBA) game developed and published by Valve Corporation. \
+            It is a sequel to the very popular Defense of the Ancients (DotA) mod, which originated as a modification for the game Warcraft III: Reign of Chaos and its expansion, \
+            Warcraft III: The Frozen Throne. Released in July 2013, Dota 2 can be played for free on Microsoft Windows, OS X, \
+            and Linux operating systems, and can only be played via Valve's official distribution platform, namely Steam.\
+            The game is renowned for its incredible complexity, which includes intricate game mechanics, strategic depth, and the individual skills required to succeed. \
+            Dota 2 has a large and active community, as well as major eSports tournaments such as The International, which is hosted by Valve every year and offers millions of dollars in prizes. \
+            With its unique features and characteristics, Dota 2 has become one of the most popular games in the gaming world, and continues to play an important role in the global gaming community.")
 
-# Load the GIF file
-gif_file_path = 'dota2ga\img\dota.gif'
+st.subheader("Gameplay Introduction", divider='violet')
 
-# Display the GIF file with adjusted width and centered position
-st.image(gif_file_path, width=400)
-
-st.write("Dota 2 is a multiplayer online battle arena game , \
-        and is the sequel to the Defense of the Ancients mod on Warcraft \
-        3: Reign of Chaos and Warcraft 3: The Frozen Throne . DotA 2 was developed by Valve Corporation, \
-        published in July 2013. Dota 2 can be played for free on Microsoft Windows , OS X and Linux operating systems. \
-        Dota 2 can be played exclusively through Valve's official distributor, Steam.")
-
-#with st.container():
-    #image = Image.open('strixrog.png')
-    #st.image(image, caption='ASUS ROG STRIX')
-
-st.header("Gameplay Introduction", divider='rainbow')
-
-# video_file = open('dota2ga\img\simulasi.mp4', 'rb')
-# video_bytes = video_file.read()
-# st.video(video_bytes)
-
-def vid():
-    # st.title("Video Player")
-
-    # Tambahkan video ke dalam aplikasi
-    video_file = open('dota2ga\img\simulasi.mp4', 'rb')
-    video_bytes = video_file.read()
-    st.video(video_bytes)
-
-if __name__ == "__main__":
-    vid()
-
+video_file = open('simulasi.mp4', 'rb')
+video_bytes = video_file.read()
+st.video(video_bytes)
 with st.container():
     st.write("Dota 2 is a highly strategic multiplayer online battle arena (MOBA) game where two teams, \
             Radiant and Dire, each consisting of five players, clash to destroy the opposing team's Ancient - their main base. \
@@ -68,7 +43,7 @@ with st.container():
             In Dota 2, heroes not only have distinct abilities but also feature customizable costumes, adding to the game's immersive experience.")
     
 with st.container():
-    st.header("Hero Of Dota 2", divider='rainbow')
+    st.subheader("Hero Of Dota 2", divider='blue')
     st.write("Here are some examples of heroes in Dota 2: ")
     multi = ''' 
         1. Anti-Mage 
@@ -100,15 +75,15 @@ def open_page(url):
     """ % (url)
     html(open_script)
 
-st.link_button('VIEW ALL HEROES', "https://www.dota2.com/heroes")
-    
+if st.button('VIEW ALL HEROES'):
+    open_page('https://www.dota2.com/heroes')
 
 with st.container():
-    image = Image.open('dota2ga\img\Hero.png')
+    image = Image.open('Hero.png')
     st.image(image, caption='HEROES OF DOTA 2')
 
 with st.container():
-    st.header("Team Player", divider='rainbow')
+    st.subheader("Team Player", divider='red')
     st.write("Dota 2 is played by 2 teams consisting of 5 players, \
         each team has a base in a corner of the map, each base has a building called (Ancient), \
         where the team must try to destroy the opposing team's (Ancient)\
@@ -116,7 +91,7 @@ with st.container():
         character who focuses on leveling up, collecting gold, buying items and fighting the opposing team to win.")
 
 with st.container():
-    st.header("Creator", divider='rainbow')
+    st.subheader("Creator", divider='grey')
     col1, col2, col3, col4 = st.columns(4, gap="small")
     with col1:
         st.write(":anguished: DMH")
@@ -126,8 +101,6 @@ with st.container():
         st.write(":unamused: MS")
     with col4:
         st.write(":grimacing: NHD")
-
-
 
 #col1, col2 = st.columns(2)
 
