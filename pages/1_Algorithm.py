@@ -4,7 +4,7 @@ from PIL import Image
 from streamlit_extras.switch_page_button import switch_page 
 from streamlit.components.v1 import html
 
-im = Image.open("dota2ga\img\iconsdota.png")
+im = Image.open("iconsdota.png")
 st.set_page_config(
     page_title="Dota 2",
     page_icon=im,
@@ -48,7 +48,7 @@ with st.container():
         st.write("tim yang dibentuk dipastikan memiliki hero yang unggul dalam perang tim. Untuk tim jenis ini, komposisi tim terdiri dari: <b>1 Carry, 1 Midlaner, 1 Offlaner, 2 Support.</b>", unsafe_allow_html=True)
     
     with st.container():
-        image = Image.open('dota2ga\img\Marci.png')
+        image = Image.open('Marci.png')
         st.image(image, caption='HEROES OF DOTA 2')
         
 st.header("Fitness Function", divider='rainbow')
