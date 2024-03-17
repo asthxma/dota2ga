@@ -56,9 +56,8 @@ with st.container():
     st.subheader("Balanced Team", divider='violet')
     st.write("Untuk Balanced Team, dirumuskan penghitungan fitness function dari masing-masing hero sebagai berikut.")  
     st.latex(r'''
-                a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
-                \sum_{k=0}^{n-1} ar^k =
-                a \left(\frac{1-r^{n}}{1-r}\right)
+                f_{balanced} = \sum_{i=1}^{5}  \left[ \frac{Total Base Attribute + Movement Speed}{Complexity} \times 
+                \frac{Win Rate + Pick Rate}{2} \right]_i
                 ''')
     st.write("")
     
