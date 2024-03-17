@@ -10,7 +10,7 @@ st.set_page_config(
     page_icon=im,
     layout="wide",
 )
-# st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
+# st.sidebar.success("Silaahkan memilih laman yang ingin dituju.")
 st.write("# Test")
 
 
