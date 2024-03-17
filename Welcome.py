@@ -3,7 +3,7 @@ from PIL import Image
 from streamlit_extras.switch_page_button import switch_page 
 from streamlit.components.v1 import html
 
-im = Image.open("iconsdota.png")
+im = Image.open("dota2ga\img\iconsdota.png")
 st.set_page_config(
     page_title="Dota 2",
     page_icon=im,
@@ -26,7 +26,7 @@ st.write("Dota 2 is a multiplayer online battle arena (MOBA) game developed and 
 
 st.subheader("Gameplay Introduction", divider='violet')
 
-video_file = open('simulasi.mp4', 'rb')
+video_file = open('dota2ga\img\simulasi.mp4', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 with st.container():
@@ -79,7 +79,7 @@ if st.button('VIEW ALL HEROES'):
     open_page('https://www.dota2.com/heroes')
 
 with st.container():
-    image = Image.open('Hero.png')
+    image = Image.open('dota2ga\img\Hero.png')
     st.image(image, caption='HEROES OF DOTA 2')
 
 with st.container():
