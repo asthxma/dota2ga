@@ -16,11 +16,13 @@ st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
 st.write("# Genetic Algorithm for DOTA 2 Team Composition :face_with_spiral_eyes:")
     
 st.subheader('What is Dota 2?', divider='rainbow')
-st.write("Dota 2 is a multiplayer online battle arena game , \
-        and is the sequel to the Defense of the Ancients mod on Warcraft \
-        3: Reign of Chaos and Warcraft 3: The Frozen Throne . DotA 2 was developed by Valve Corporation, \
-        published in July 2013. Dota 2 can be played for free on Microsoft Windows , OS X and Linux operating systems. \
-        Dota 2 can be played exclusively through Valve's official distributor, Steam.")
+st.write("Dota 2 is a multiplayer online battle arena (MOBA) game developed and published by Valve Corporation. \
+            It is a sequel to the very popular Defense of the Ancients (DotA) mod, which originated as a modification for the game Warcraft III: Reign of Chaos and its expansion, \
+            Warcraft III: The Frozen Throne. Released in July 2013, Dota 2 can be played for free on Microsoft Windows, OS X, \
+            and Linux operating systems, and can only be played via Valve's official distribution platform, namely Steam.\
+            The game is renowned for its incredible complexity, which includes intricate game mechanics, strategic depth, and the individual skills required to succeed. \
+            Dota 2 has a large and active community, as well as major eSports tournaments such as The International, which is hosted by Valve every year and offers millions of dollars in prizes. \
+            With its unique features and characteristics, Dota 2 has become one of the most popular games in the gaming world, and continues to play an important role in the global gaming community.")
 
 #with st.container():
     #image = Image.open('strixrog.png')
