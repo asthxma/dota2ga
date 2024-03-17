@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 
-st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
+#st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
 
 st.write("# Genetic Algorithm for DOTA 2 Team Composition :face_with_spiral_eyes:")
     
@@ -23,10 +23,6 @@ st.write("Dota 2 is a multiplayer online battle arena (MOBA) game developed and 
             The game is renowned for its incredible complexity, which includes intricate game mechanics, strategic depth, and the individual skills required to succeed. \
             Dota 2 has a large and active community, as well as major eSports tournaments such as The International, which is hosted by Valve every year and offers millions of dollars in prizes. \
             With its unique features and characteristics, Dota 2 has become one of the most popular games in the gaming world, and continues to play an important role in the global gaming community.")
-
-#with st.container():
-    #image = Image.open('strixrog.png')
-    #st.image(image, caption='ASUS ROG STRIX')
 
 st.subheader("Gameplay Introduction", divider='violet')
 
@@ -105,8 +101,6 @@ with st.container():
         st.write(":unamused: MS")
     with col4:
         st.write(":grimacing: NHD")
-
-
 
 #col1, col2 = st.columns(2)
 
