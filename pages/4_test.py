@@ -4,7 +4,7 @@ from PIL import Image
 from streamlit_extras.switch_page_button import switch_page 
 from streamlit.components.v1 import html
 
-im = Image.open("dota2ga\iconsdota.png")
+im = Image.open("iconsdota.png")
 st.set_page_config(
     page_title="Dota 2",
     page_icon=im,
@@ -24,7 +24,7 @@ def main():
     # Informasi orang pertama
     with st.expander("Orang Pertama"):
         st.write("Nama: John Doe")
-        st.image("dota2ga\img\Hero.png", caption="Foto John Doe", width=150)
+        st.image("Hero.png", caption="Foto John Doe", width=150)
 
     # Informasi orang kedua
     with st.expander("Orang Kedua"):

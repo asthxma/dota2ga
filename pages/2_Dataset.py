@@ -4,7 +4,7 @@ from PIL import Image
 from streamlit_extras.switch_page_button import switch_page 
 from streamlit.components.v1 import html
 
-im = Image.open("dota2ga\iconsdota.png")
+im = Image.open("iconsdota.png")
 st.set_page_config(
     page_title="Dota 2",
     page_icon=im,
@@ -17,7 +17,7 @@ st.header('About Dataset?', divider='rainbow')
 with st.container():
     st.write("This dataset presents information about 124 heroes in Dota 2 that can be played by teams. The data provided includes win rate, pick rate, primary role, and various other important information that can help in game strategy. With this dataset, teams can conduct in-depth analysis to choose the optimal team composition and plan effective strategies to achieve victory.")
     
-df = pd.read_csv(r'dota2ga\dataset\dota2_heroes.csv')
+df = pd.read_csv('dataset\dota2_heroes.csv')
 cleaned_df = df.dropna()
 st.write(cleaned_df)
 
