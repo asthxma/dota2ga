@@ -47,4 +47,8 @@ file_path = 'dataset\dota2_heroes.csv'
 
 df, hero_df, total_balance = preprocess_data(file_path)
 
-print(df)
+print(df,"\n")
+
+print(hero_df,"\n")
+
+print(total_balance)
