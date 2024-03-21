@@ -6,11 +6,10 @@ from streamlit.components.v1 import html
 
 im = Image.open("iconsdota.png")
 st.set_page_config(
-    page_title="Dota 2",
+    page_title="Dota 2 - Team Composition",
     page_icon=im,
     layout="wide",
 )
 
-# st.sidebar.success("Silahkan memilih laman yang ingin dituju.")
 st.write("# Team Composition Dota 2")
 
