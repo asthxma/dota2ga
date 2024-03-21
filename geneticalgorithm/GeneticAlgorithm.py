@@ -5,7 +5,7 @@ def calculate_fitness(individual, target_positions):
     fitness_value = 0
     for hero, target_lane in zip(individual, target_positions):
         if hero['primary_role'] == target_lane :
-            fitness_value += 
+            fitness_value += hero['fitness']
     return fitness_value
 
 def tournament_selection(population, fitness_values, tournament_size):
@@ -29,3 +29,55 @@ def mutate(individual, hero_data, mutation_rate):
             new_hero = random.choice(hero_data)
             individual[i] = new_hero
     return individual
+
+def genetic_algorithm(population, hero_data, target_positions, generations, tournament_size, crossover_rate, mutation_rate, pop_size):
+    temp_result = []
+    best_individual = None
+    best_fitness = float('-inf')
+
+    for generation in range(generations):
+        fitness_values = [calculate_fitness(individual, target_positions) for individual in population]
+
+        # Keep track of the best individual in the current generation
+        max_fitness = max(fitness_values)
+        if max_fitness > best_fitness:
+            best_fitness = max_fitness
+            best_individual = population[np.argmax(fitness_values)]
+
+        # Tournament selection
+        parents = tournament_selection(population, fitness_values, tournament_size)
+
+        # Crossover
+        children = []
+        for parent1, parent2 in zip(parents[::2], parents[1::2] + [None]):
+            if parent2 is not None:
+                if random.uniform(0, 1) < crossover_rate:
+                    child1, child2 = crossover(parent1, parent2)
+                    children.append(child1)
+                    children.append(child2)
+                else:
+                    children.append(parent1)
+                    children.append(parent2)
+            else:
+                # Handle the case where the number of parents is odd
+                children.append(parent1)
+
+        # Mutation
+        mutated_children = [mutate(child, hero_data, mutation_rate) for child in children]
+
+        # Combine old and new populations, then select the best individuals
+        combined_population = population + mutated_children
+        fitness_values_combined = [calculate_fitness(individual, target_positions) for individual in combined_population]
+        best_indices_combined = np.argsort(fitness_values_combined)[-pop_size:]
+        population = [combined_population[i] for i in best_indices_combined]
+
+        # Print results for each generation
+        temp_result.append(best_fitness)
+        #print(f"Generation {generation + 1}, Best Fitness: {best_fitness}")
+    
+        # Pilih individu terbaik dari populasi terakhir
+    fitness_values = [calculate_fitness(individual, target_positions) for individual in population]
+    best_individual_index = np.argmax(fitness_values)
+    best_individual = population[best_individual_index]
+
+    return best_individual, temp_result
