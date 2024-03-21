@@ -1,5 +1,5 @@
 import pandas as pd
-from nama_modul import df
+#from nama_modul import df
 
 
 def preprocess_data(file_path):
@@ -21,9 +21,11 @@ def preprocess_data(file_path):
     safe = df[df['primary_role'] == 'safelane']
     mid = df[df['primary_role'] == 'midlane']
     off = df[df['primary_role'] == 'offlane']
-    supp = df[df['primary_role'] == 'support']
+    softsupp = df[df['primary_role'] == 'soft support']
+    hardsupp = df[df['primary_role'] == 'hard support']
+
     # Create a list of dataframes for each role
-    roles = [safe, mid, off, supp]
+    roles = [safe, mid, off, softsupp,hardsupp]
 
     # Calculate the sum of (Hard_Engage * Win_Rate) and (Team_Fight * Win_Rate) for each role
     # max_hard_engage_sums = [role.groupby('Lane').apply(lambda x: (x['Hard_Engage'] * x['Win_Rate']).max()).sum() for role in roles]
@@ -31,7 +33,7 @@ def preprocess_data(file_path):
     max_balanced_sums = [role.groupby('primary_role').apply(lambda x: (x['Balanced']).max()).sum() for role in roles]
     # Create a DataFrame to display the results
     result_df = pd.DataFrame({
-        'Role': ['safelane', 'midlane', 'offlane', 'support'],
+        'Role': ['safelane', 'midlane', 'offlane', 'soft support', 'hard support'],
         'max_balanced_sums': max_balanced_sums,
         # 'Max_Team_Fight_Sum': max_team_fight_sums
     })
@@ -43,6 +45,6 @@ def preprocess_data(file_path):
 
 file_path = 'dataset\dota2_heroes.csv'
 
-preprocess_data(file_path)
+df, hero_df, total_balance = preprocess_data(file_path)
 
 print(df)
