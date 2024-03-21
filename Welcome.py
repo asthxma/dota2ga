@@ -29,14 +29,14 @@ with st.container():
     st.write('<i> <div style="text-align: center"> Credit: ESL DOTA 2 & NoobFromUA </div> </i>', unsafe_allow_html=True)
 
 with st.container():
-    st.write("Dota 2 is a highly strategic multiplayer online battle arena (MOBA) game where two teams, \
+    st.write("A game of Dota 2 consisted of two teams, \
             Radiant and Dire, each consisting of five players, clash to destroy the opposing team's Ancient - their main base. \
             The battlefield consists of three distinct lanes: the offlane, midlane, and safe lane, each guarded by three towers and two barracks. \
             Destroying barracks grants the team advantages, empowering their creeps to become stronger. \
             Additionally, players can farm in the forest to gain experience and gold. \
             Securing immortality through the Aegis of the Immortal requires defeating Roshan, a formidable jungle monster. \
             Runes scattered throughout the map provide temporary power-ups every two minutes. \
-            With over 100 heroes to choose from, each categorized into Strength, Agility, and Intelligence, \
+            With 124 heroes to choose from, each categorized into Strength, Agility, Intelligence, and Universal attribute \
             players must utilize their hero's unique abilities and strategic decision-making to navigate the map, \
             eliminate enemy forces, and ultimately achieve victory by destroying the opponent's Ancient. \
             In Dota 2, heroes not only have distinct abilities but also feature customizable costumes, adding to the game's\
@@ -64,14 +64,14 @@ if st.button('VIEW ALL HEROES'):
 
 with st.container():
     st.subheader("Teams", divider='red')
-    st.write("Dota 2 is played by 2 teams consisting of 5 players, \
+    st.write("Dota 2 is played by two teams consisting of five players, \
         each team has a base in a corner of the map, each base has a building called Ancient, \
         where the team must try to destroy the opposing team's Ancient\
         in order to win the match. Each player can only control one Hero\
         character who focuses on leveling up, collecting gold, buying items and fighting the opposing team to win.")
 
 with st.container():
-    st.subheader("Creator", divider='green')
+    st.subheader("Creators", divider='green')
     st.write("""
              <b> DISCLAIMER: </b> This program is intended for non-profit or educational use only. Any utilization of Dota 2 \
              assets is strictly in compliance with fair use principles outlined by Valve Corporation.
