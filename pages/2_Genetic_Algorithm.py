@@ -24,28 +24,27 @@ with st.container():
             5. The heroes are considered in initial base starting game, which is without items and abilities.
             """, unsafe_allow_html=True)
     
-st.header("Ideal Team Composition", divider='red')
+st.header("Fitness Function", divider='violet')
 with st.container():
-    st.write("tim yang dibentuk dipastikan seimbang memiliki hero dengan peran yang sesuai. \
-                 Untuk tim jenis ini, komposisi tim terdiri dari: <b> 1 Carry, 1 Midlaner, 1 Offlaner,\
-                  1 Support, dan 1 Hard Support. </b>", unsafe_allow_html=True)
-    
-        
-st.header("Fitness Function", divider='rainbow')
-with st.container():
-    st.write("Untuk Balanced Team, dirumuskan penghitungan fitness function dari masing-masing hero sebagai berikut.")  
+    st.write("For each hero, we define the fitness function with the following formula:")  
     st.latex(r'''
                 f_{balanced} = \sum_{i=1}^{5}  \left[ \frac{Total Base Attribute + Movement Speed}{Complexity} \times 
                 \frac{Win Rate + Pick Rate}{2} \right]_i
                 ''')
-    st.write("")
+    st.write("For each team, the fitness value is the sum of fitness values from each individual heroes. This team fitness function then\
+             is used for comparing the team composition made.")
     
-st.header("Genetic Algorithm Implementation", divider='rainbow')
+st.header("Genetic Algorithm Implementation", divider='green')
 with st.container():
     st.write("""
-             1. The initial population is done by forming as many teams as the specified population value. Each team consists of random heroes.
-            2. Calculate the fitness of the formed team (Balance or Teamfight).
-            3. Tournament selection is used as the selection method for selecting parents.
-            4. The 2 parents are crossovered with 1 cut point. The cut point is chosen randomly
+            1. The initial population is created by composing as many teams as the specified population value. Each team consists of \
+             randomly selected heroes with suitable roles.
+            2. Calculate the fitness of the composed team.
+            3. Tournament selection is used as the selection method for choosing parents.
+            4. The two parents undergo crossover with a single cut point, which is chosen randomly. This process results in two \
+             children (teams of the next generation).
+            5. For the mutation process, if the randomly generated value for a hero is lower than the mutation rate, the hero will be swapped\
+              with another random hero.
+            6. Repeat the process until the specified number of generations is reached.
             """)
     

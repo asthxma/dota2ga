@@ -63,19 +63,11 @@ if st.button('VIEW ALL HEROES'):
     open_page('https://www.dota2.com/heroes')
 
 with st.container():
-    st.subheader("Teams", divider='red')
-    st.write("Dota 2 is played by two teams consisting of five players, \
-        each team has a base in a corner of the map, each base has a building called Ancient, \
-        where the team must try to destroy the opposing team's Ancient\
-        in order to win the match. Each player can only control one Hero\
-        character who focuses on leveling up, collecting gold, buying items and fighting the opposing team to win.")
-
-with st.container():
     st.subheader("Creators", divider='green')
     st.write("""
              <b> DISCLAIMER: </b> This program is intended for non-profit or educational use only. Any utilization of Dota 2 \
              assets is strictly in compliance with fair use principles outlined by Valve Corporation.
-            - :disappointed: Kiyoka
+            - :disappointed: March
             - :sleepy: WaveA-
             - :grimacing: Haz
             - :sob: Nature.
