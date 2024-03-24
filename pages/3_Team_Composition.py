@@ -52,11 +52,12 @@ chart_data = pd.DataFrame({
 })
 st.header("Result", divider='violet')
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns([0.5, 0.1, 0.5])
 with col1:
     st.subheader('Fitness Graph')
     st.line_chart(chart_data, x='Generations', y="Fitness", color="#dc143c", width=0, height=0, use_container_width=True)
-with col2:
+
+with col3:
     st.subheader("Team Composition")
     st.write("Here's the team composition based on genetic algorithm!")
     result_df = pd.DataFrame.from_dict(result)
