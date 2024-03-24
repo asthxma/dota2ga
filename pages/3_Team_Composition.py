@@ -51,12 +51,15 @@ chart_data = pd.DataFrame({
     #"Team Fight": (temp_result_team_fight / total_tf) * 100
 })
 st.header("Result", divider='violet')
-st.subheader('Fitness Graph')
-st.line_chart(chart_data, x='Generations', y="Fitness", color="#dc143c", width=0, height=0, use_container_width=False)
 
-st.subheader("Team Composition")
-st.write("Here's the team composition based on genetic algorithm!")
-result_df = pd.DataFrame.from_dict(result)
-st.dataframe(result_df.drop(columns='fitness'))
-fitness_tf = ((temp_result[-1] / total_fit) * 100)
-st.write("With the fitness value reaching",f"{fitness_tf:.2f}%.")
+col1, col2 = st.columns(2)
+with col1:
+    st.subheader('Fitness Graph')
+    st.line_chart(chart_data, x='Generations', y="Fitness", color="#dc143c", width=0, height=0, use_container_width=True)
+with col2:
+    st.subheader("Team Composition")
+    st.write("Here's the team composition based on genetic algorithm!")
+    result_df = pd.DataFrame.from_dict(result)
+    st.dataframe(result_df.drop(columns='fitness'))
+    fitness_tf = ((temp_result[-1] / total_fit) * 100)
+    st.write("With the fitness value reaching",f"{fitness_tf:.2f}%.")
