@@ -29,7 +29,7 @@ with st.container():
              that can help in-game strategy. With this dataset, players can conduct in-depth analysis to choose the \
              optimal team composition and plan effective strategies to achieve victory.")
     
-df = pd.read_csv('dataset\dota2_heroes.csv')
+df = pd.read_csv('dataset/dota2_heroes.csv')
 st.write(df)
 
 st.write("""<span style="color:red">**Note:**</span> Match data is collected from matches played between February 1 \
