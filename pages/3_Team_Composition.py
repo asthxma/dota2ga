@@ -20,9 +20,11 @@ st.set_page_config(
 file_path = 'dataset\dota2_heroes.csv'
 df, hero_df, total_fit= preprocess_data(file_path)
 hero_data = hero_df.to_dict(orient='records')
-st.write("# Team Composition Dota 2")
+st.write("# Team Composition")
+st.write('<i> Based on genetic algorithm, what would the best team look like?</i>', unsafe_allow_html=True)
 
-
+st.header("Genetic Algorithm Parameters", divider='rainbow')
+st.write("You can try setting the parameter and then tweaking it according to the results to see how the genetic algorithm fares!")
 # Set algorithm parameters
 target_positions = st.multiselect(
     'Input Target Lineup',
@@ -32,11 +34,11 @@ target_positions = st.multiselect(
 
 
 # Initialize input
-pop_size = st.number_input('Population Numbers', min_value=1, value=10)
+pop_size = st.number_input('Population Size', min_value=1, value=10)
 population = [random.sample(hero_data[:-1], 5) for _ in range(pop_size)]
 
-generations = st.number_input('generations', min_value=1, value=30)
-tournament_size = st.number_input('Tournament Size', min_value=1, value=3)
+generations = st.number_input('Number of Generations', min_value=1, value=30)
+tournament_size = st.number_input('Tournament Size', min_value=1,max_value=pop_size, value=3)
 crossover_rate = st.number_input('Crossover Rate', value=0.8, max_value=1.00)
 mutation_rate = st.number_input('Mutation Rate', value=0.10, max_value=1.00)
 
@@ -48,12 +50,13 @@ chart_data = pd.DataFrame({
     "Fitness": (temp_result / total_fit) * 100
     #"Team Fight": (temp_result_team_fight / total_tf) * 100
 })
-
-st.subheader('Fitness Value')
+st.header("Result", divider='violet')
+st.subheader('Fitness Graph')
 st.line_chart(chart_data, x='Generations', y="Fitness", color="#dc143c", width=0, height=0, use_container_width=False)
 
-st.subheader("Team Composition:")
+st.subheader("Team Composition")
+st.write("Here's the team composition based on genetic algorithm!")
 result_df = pd.DataFrame.from_dict(result)
 st.dataframe(result_df.drop(columns='fitness'))
 fitness_tf = ((temp_result[-1] / total_fit) * 100)
-st.write(f"Fitness: {fitness_tf:.2f}%")
+st.write("With the fitness value reaching",f"{fitness_tf:.2f}%")
