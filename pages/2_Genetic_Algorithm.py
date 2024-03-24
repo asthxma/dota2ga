@@ -28,7 +28,7 @@ st.header("Fitness Function", divider='violet')
 with st.container():
     st.write("For each hero, we define the fitness function with the following formula:")  
     st.latex(r'''
-                f_{balanced} = \sum_{i=1}^{5}  \left[ \frac{Total Base Attribute + Movement Speed}{Complexity} \times 
+                f = \sum_{i=1}^{5}  \left[ \frac{Total Base Attribute + Movement Speed}{Complexity} \times 
                 \frac{Win Rate + Pick Rate}{2} \right]_i
                 ''')
     st.write("For each team, the fitness value is the sum of fitness values from each individual heroes. This team fitness function then\
