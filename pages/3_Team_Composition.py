@@ -17,7 +17,7 @@ st.set_page_config(
 )
 
 
-file_path = 'dataset\dota2_heroes.csv'
+file_path = 'dataset/dota2_heroes.csv'
 df, hero_df, total_fit= preprocess_data(file_path)
 hero_data = hero_df.to_dict(orient='records')
 st.write("# Team Composition")
