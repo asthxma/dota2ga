@@ -19,20 +19,35 @@ with st.container():
     st.write("""
             1. The dataset is assumed to be stable, i.e. it does not change significantly over time during the one month interval of data collected.
             2. Each hero is assumed to have only one primary role.
-            3. The team formed composed of one hero each from these five roles: <b> safelane, midlane, offlane, soft support, and hard support.</b>
+            3. The team formed composed of one hero each from these five roles: <b> safelane, midlane, offlane, soft support,\
+              and hard support</b>.
             4. The team composition is done without considering the enemy team being played against.
             5. The heroes are considered in initial base starting game, which is without items and abilities.
             """, unsafe_allow_html=True)
     
 st.header("Fitness Function", divider='violet')
 with st.container():
-    st.write("For each hero, we define the fitness function with the following formula:")  
+    st.write("For each hero, first we define hero's fitness with the following formula:")  
     st.latex(r'''
-                f = \sum_{i=1}^{5}  \left[ \frac{Total Base Attribute + Movement Speed}{Complexity} \times 
-                \frac{Win Rate + Pick Rate}{2} \right]_i
+                h = \frac{Total Base Attribute + Movement Speed}{Complexity} \times 
+                \frac{Win Rate + Pick Rate}{2},
                 ''')
-    st.write("For each team, the fitness value is the sum of fitness values from each individual heroes. This team fitness function then\
-             is used for comparing the team composition made.")
+    st.write("then, we define the maximum possible hero fitness for each position, which is:")  
+    st.latex(r'''
+            max_i = \max_{i=1}^{5} (h_i),
+            ''')
+    st.write("where <b> i </b> represents each position: safelane, midlane, offlane, soft support, and hard support.\
+             Using this max possible values, we define the combination with the maximum hero fitness for each position \
+             as", unsafe_allow_html=True)
+    st.latex(r'''
+                maxteam = \sum_{i=1}^{5} max_i
+                ''')
+    st.write("Finally we use this <b> maxteam </b> as the constant in the fitness function, that is ", unsafe_allow_html=True)
+    st.latex(r'''
+                f = \frac{\sum_{i=1}^{5} h_i}{maxteam} \times 100 \%
+                ''')
+    st.write("For each team, the fitness value is the sum of fitness values from each individual heroes compared with the ideal team\
+             . This team fitness function then is used for comparing the team composition made.")
     
 st.header("Genetic Algorithm Implementation", divider='green')
 with st.container():
